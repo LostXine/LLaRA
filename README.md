@@ -27,7 +27,7 @@
 
 1. **Download the Pretrained Model**:
 
-   Download the following model to [checkpoints](./checkpoints/)
+   Download the following model to `./checkpoints/`
    - llava-1.5-7b-D-inBC + Aux(B) trained on VIMA-80k [Hugging Face](https://huggingface.co/variante/llava-1.5-7b-llara-D-inBC-Aux-B-VIMA-80k)
 
    More models are available at [Model Zoo](./checkpoints/README.md)
@@ -68,4 +68,4 @@ If you encounter any issues or have questions about the project, please submit a
 
 ## License
 
-This project is licensed under the [Apache-2.0 License](LICENSE.md) - see the LICENSE file for details.
+This project is licensed under the [Apache-2.0 License](LICENSE) - see the LICENSE file for details.
