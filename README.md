@@ -1,0 +1,71 @@
+# LLaRA: Large Language and Robotics Assistant
+
+![llara](./assets/llara.png)
+
+**LLaRA: Supercharging Robot Learning Data for Vision-Language Policy** \[[paper](https://xxli.me/resources/llara.pdf)\]
+
+[Xiang Li](https://xxli.me)<sup>1</sup>, [Cristina Mata](https://openreview.net/profile?id=~Cristina_Mata1)<sup>1</sup>, [Jongwoo Park](https://github.com/jongwoopark7978)<sup>1</sup>, [Kumara Kahatapitiya](https://www3.cs.stonybrook.edu/~kkahatapitiy)<sup>1</sup>, [Yoo Sung Jang](https://yjang43.github.io/)<sup>1</sup>, [Jinghuan Shang](https://elicassion.github.io/)<sup>1</sup>, [Kanchana Ranasinghe](https://kahnchana.github.io/)<sup>1</sup>, [Ryan Burgert](https://ryanndagreat.github.io/)<sup>1</sup>, [Mu Cai](https://pages.cs.wisc.edu/~mucai/)<sup>2</sup>, [Yong Jae Lee](https://pages.cs.wisc.edu/~yongjaelee/)<sup>2</sup>, and [Michael S. Ryoo](http://michaelryoo.com/)<sup>1</sup>
+
+<sup>1</sup>Stony Brook University  <sup>2</sup>University of Wisconsin-Madison 
+
+<p float="left">
+  <img src="assets/llara-vid1.gif" width="49%" />
+  <img src="assets/llara-vid2.gif" width="49%" /> 
+</p>
+
+## Installation
+
+1. **Set Up Python Environment**:
+
+   Follow the instructions to install the same Python environment as used by [LLaVA](https://github.com/haotian-liu/LLaVA). Details are available [here](https://github.com/haotian-liu/LLaVA/blob/main/README.md#install).
+
+2. **Install VIMABench**:
+
+   Complete the setup for [VIMABench](https://github.com/vimalabs/VIMABench) to use its functionalities within your projects.
+
+## Demo
+
+1. **Download the Pretrained Model**:
+
+   Download the following model to [checkpoints](./checkpoints/)
+   - llava-1.5-7b-D-inBC + Aux(B) trained on VIMA-80k [Hugging Face](https://huggingface.co/variante/llava-1.5-7b-llara-D-inBC-Aux-B-VIMA-80k)
+
+   More models are available at [Model Zoo](./checkpoints/README.md)
+
+2. **Run the evaluation**:
+
+   ```
+   cd eval
+   # evaluate the model with oracle object detector
+   python3 eval-llara.py D-inBC-AuxB-VIMA-80k --model-path ../checkpoints/llava-1.5-7b-llara-D-inBC-Aux-B-VIMA-80k --prompt-mode hso
+   
+   # the results will be saved to ../results/[hso]D-inBC-AuxB-VIMA-80k.json
+   ```
+
+3. **Check the results**:
+   Please refer to [llara-result.ipynb](./results/llara-result.ipynb)
+
+## Quick Start Guide
+
+1. **Prepare the Dataset**:
+
+   Visit the [datasets directory](./datasets/README.md) to prepare your dataset for training.
+
+2. **Finetune a LLaVA Model**:
+
+   To start finetuning a LLaVA model, refer to the instructions in [train-llava](./train-llava/README.md).
+
+3. **Evaluate the Trained Model**:
+
+   Follow the steps in [eval](./eval/README.md) to assess the performance of your trained model.
+
+4. **Train a MaskRCNN for Object Detection**:
+
+   If your project requires training a MaskRCNN for object detection, check out [train-maskrcnn](./train-maskrcnn/README.md) for detailed steps.
+
+## Issues
+If you encounter any issues or have questions about the project, please submit an issue on our [GitHub issues page](https://github.com/LostXine/LLaRA/issues).
+
+## License
+
+This project is licensed under the [Apache-2.0 License](LICENSE.md) - see the LICENSE file for details.
