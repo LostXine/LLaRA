@@ -69,3 +69,20 @@ If you encounter any issues or have questions about the project, please submit a
 ## License
 
 This project is licensed under the [Apache-2.0 License](LICENSE) - see the LICENSE file for details.
+
+## Support us
+
+If you find this work useful in your research, please consider giving it a star ⭐ and cite our work:
+
+```bibtex
+@article{li2024llara,
+  title={LLaRA: Supercharging Robot Learning Data for Vision-Language Policy},
+  author={Li, Xiang and Mata, Cristina and Park, Jongwoo and Kahatapitiya, Kumara and Jang, Yoo Sung and Shang, Jinghuan and Ranasinghe, Kanchana and Burgert, Ryan and Cai, Mu and Lee, Yong Jae and Ryoo, Michael S.},
+  journal={arXiv preprint arXiv:2406.20095},
+  year={2024}
+}
+```
+Thanks!
+
+
+
