@@ -26,7 +26,7 @@ python3 eval-llara.py [-h] [--model-path MODEL_PATH] [--output-path OUTPUT_PATH]
 - `MODEL_PATH`: Path to LLaVA checkpoint.
 - `PROMPT_MODE`: Set of operational flags:
 - - `h`: Enable action history.
-- - `s`: Query VLM for each observation and perform a single action step no mather how many steps the VLM generates.
+- - `s`: Query VLM for each observation and perform a single action step no matter how many steps the VLM generates.
 - - `d`: Enable object detection using VLM.
 - - `e`: Enable object detection using MaskRCNN.
 - - `o`: Enable oracle object detection.
