@@ -19,7 +19,14 @@
 
    Follow the instructions to install the same Python environment as used by [LLaVA](https://github.com/haotian-liu/LLaVA). Details are available [here](https://github.com/haotian-liu/LLaVA/blob/main/README.md#install).
 
-2. **Install VIMABench**:
+2. **Replace LLaVA Implementation**:
+
+   Navigate to `train-llava` in this repo and install the llava package there:
+   ```
+   cd train-llava && pip install -e .
+   ```
+
+3. **Install VIMABench**:
 
    Complete the setup for [VIMABench](https://github.com/vimalabs/VIMABench) to use its functionalities within your projects.
 
