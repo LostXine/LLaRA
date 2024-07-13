@@ -32,8 +32,8 @@ def action_to_text(obs_img: np.ndarray, action: dict, spatula:bool) -> str:
         return f'Pick up the {obj_text} at <b>({px / w :.3f}, {py / h: .3f})</b>, rotate <r>[{-de}]</r> degrees, and drop it at <b>({tx / w :.3f}, {ty / h :.3f})</b>.'
 
 
-def query_bc(tokenizer, model, image_processor, prompt, prompt_mode, prompt_assets, action_hist, obs, detector):
-    prepared_prompt, image_list = prepare_prompt(tokenizer, model, image_processor, prompt, mode=prompt_mode, prompt_assets=prompt_assets, spatula=obs['ee'] > 0, detector=detector)
+def query_bc(tokenizer, model, image_processor, prompt, prompt_mode, prompt_assets, action_hist, obs, detector, prompt_id):
+    prepared_prompt, image_list = prepare_prompt(tokenizer, model, image_processor, prompt, mode=prompt_mode, prompt_assets=prompt_assets, spatula=obs['ee'] > 0, detector=detector, uid=prompt_id)
                         
     # tag for action history
     if 'h' in prompt_mode and len(action_hist):
@@ -73,6 +73,7 @@ if __name__ == '__main__':
     parser.add_argument('--model-path', type=str)
     parser.add_argument('--output-path', type=str, default='../results/')
     parser.add_argument('--prompt-mode', type=str, default='hs')
+    parser.add_argument('--prompt-id', type=int, default=-1)
     parser.add_argument('--seed', type=int, default=200000)
     parser.add_argument('--num-env', type=int, default=20)
     parser.add_argument('--max-length', type=int, default=8)

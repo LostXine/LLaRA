@@ -191,7 +191,7 @@ def object_detector_inference(image, detector):
         obj_list.append(obj_name + ' at ' + obj_box)
     return obj_list
 
-def prepare_prompt(tokenizer, model, image_processor, p:str, mode:str, prompt_assets:dict={}, spatula:bool=False, detector=None) -> str:
+def prepare_prompt(tokenizer, model, image_processor, p:str, mode:str, prompt_assets:dict={}, spatula:bool=False, detector=None, uid=-1) -> str:
         refer_objs = re.findall(r'\{.+?\}', p)
         image_list = []
         image_idx = 0
@@ -238,7 +238,12 @@ def prepare_prompt(tokenizer, model, image_processor, p:str, mode:str, prompt_as
                 image_idx += 1
             p = p.replace(ref_obj, obj_desc)
         task_prompt = f'<task>{p}</task>'
-        user_prompt = random.choice(action_prompts)
+        if uid < 0:
+            user_prompt = random.choice(action_prompts)
+        elif uid < len(action_prompts):
+            user_prompt = action_prompts[uid]
+        else:
+            user_prompt = ''
         
         format_prompt = "Every action you take must include two locations in the format of <b>(x, y)</b> and one clockwise rotation angle in the format of <r>[r]</r>. "
         if spatula:
@@ -249,6 +254,8 @@ def prepare_prompt(tokenizer, model, image_processor, p:str, mode:str, prompt_as
             format_prompt += "The image coordinate ranges from 0 to 1. The rotation angle indicates how many degrees you rotate the object clockwise, and it ranges from -359 to 359."
         
         assert len(image_list) == image_idx
+        if len(user_prompt) == 0:
+            return '\n'.join([f'<image{image_idx}>', task_prompt, format_prompt]), image_list
         return '\n'.join([f'<image{image_idx}>', task_prompt, user_prompt, format_prompt]), image_list
 
 
@@ -257,6 +264,7 @@ def eval_episode(args, gen_action, parse_action):
     seed_end = args.seed + args.num_env
     max_episode_length = args.max_length
     prompt_mode = args.prompt_mode
+    prompt_id = args.prompt_id
     
     # load external object detector
     if 'e' in prompt_mode:
@@ -293,12 +301,18 @@ def eval_episode(args, gen_action, parse_action):
 
     model_name = get_model_name_from_path(args.model_path)
     tokenizer, model, image_processor, _ = load_pretrained_model(args.model_path, None, model_name, use_flash_attn=True)
-    print(image_processor)
+    
+    if prompt_id < 0:
+        print_prompt_mode = prompt_mode
+    elif prompt_id >= len(action_prompts):
+        print_prompt_mode = prompt_mode + '_no'
+    else:
+        print_prompt_mode = prompt_mode + f'{prompt_id:02d}'
     if len(args.partition):
-        filename = os.path.join(args.output_path, f'({args.partition})[{prompt_mode}]' + args.filename)
+        filename = os.path.join(args.output_path, f'({args.partition})[{print_prompt_mode}]' + args.filename)
         plist = [args.partition]
     else:
-        filename = os.path.join(args.output_path,f'[{prompt_mode}]' + args.filename)
+        filename = os.path.join(args.output_path,f'[{print_prompt_mode}]' + args.filename)
         plist = ALL_PARTITIONS
     if not filename.endswith('.json'):
         filename = filename + '.json'
@@ -337,7 +351,7 @@ def eval_episode(args, gen_action, parse_action):
                     while len(action_queue) == 0 and retry < retry_thre:
                         paresed_action, prepared_prompt, ans = gen_action(tokenizer, model, image_processor,
                                                                           prompt, prompt_mode, prompt_assets, action_hist,
-                                                                          obs, detector)
+                                                                          obs, detector, prompt_id)
                         action_queue.extend(paresed_action)
                         prompt_hist.append(prepared_prompt)# send to VLM to solve the query
                         answer_hist.append(ans)

@@ -38,8 +38,8 @@ def action_to_text(action: dict, tokenizer) -> str:
     return quantize_float_to_text(np.array(norm_action), tokenizer)
 
 
-def query_rt2(tokenizer, model, image_processor, prompt, prompt_mode, prompt_assets, action_hist, obs, detector):
-    prepared_prompt, image_list = prepare_prompt(tokenizer, model, image_processor, prompt, mode=prompt_mode, prompt_assets=prompt_assets, spatula=obs['ee'] > 0, detector=detector)
+def query_rt2(tokenizer, model, image_processor, prompt, prompt_mode, prompt_assets, action_hist, obs, detector, prompt_id):
+    prepared_prompt, image_list = prepare_prompt(tokenizer, model, image_processor, prompt, mode=prompt_mode, prompt_assets=prompt_assets, spatula=obs['ee'] > 0, detector=detector, uid=prompt_id)
     
     # tag for action history
     if 'h' in prompt_mode and len(action_hist):

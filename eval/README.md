@@ -18,7 +18,7 @@ python3 eval-rt2.py [evaluation name] --model-path [MODEL_PATH]
 
 Usage: 
 ```
-python3 eval-llara.py [-h] [--model-path MODEL_PATH] [--output-path OUTPUT_PATH] [--prompt-mode PROMPT_MODE] [--seed SEED] [--num-env NUM_ENV] [--max-length MAX_LENGTH] [--partition PARTITION] [--detector DETECTOR] [--detector-thre DETECTOR_THRE] filename
+python3 eval-llara.py [-h] [--model-path MODEL_PATH] [--output-path OUTPUT_PATH] [--prompt-mode PROMPT_MODE] [--prompt-id PROMPT_ID] [--seed SEED] [--num-env NUM_ENV] [--max-length MAX_LENGTH] [--partition PARTITION] [--detector DETECTOR] [--detector-thre DETECTOR_THRE] filename
 ```
 
 - `filename`: Name of the output file.
@@ -30,6 +30,10 @@ python3 eval-llara.py [-h] [--model-path MODEL_PATH] [--output-path OUTPUT_PATH]
 - - `d`: Enable object detection using VLM.
 - - `e`: Enable object detection using MaskRCNN.
 - - `o`: Enable oracle object detection.
+- `PROMPT_ID`: Which prompt to use when genearte actions. [What's this?](https://github.com/LostXine/LLaRA/blob/abf04533e057ad51d3fd176f14507ef601237412/eval/vima_utils.py#L23-L39)
+-  - -1 (or any negative values) : Randomly selected from 15 options (default)
+-  - from 0 to 14 (inclusive) : Fixed prompt at the index you set (0-index)
+-  - 100 (or any number strictly greater than 14) : The prompt will be omitted
 - `SEED`: Random seed for reproducibility.
 - `NUM_ENV`: Number of episodes per task.
 - `MAX_LENGTH`: Maximum steps per episode; episodes exceeding this limit are marked as failed.
