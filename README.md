@@ -28,7 +28,7 @@
 
 3. **Install VIMABench**:
 
-   Complete the setup for [VIMABench](https://github.com/vimalabs/VIMABench) to use its functionalities within your projects.
+   Complete the setup for [VIMABench](https://github.com/vimalabs/VIMABench).
 
 ## Demo
 
@@ -68,7 +68,7 @@
 
 4. **Train a MaskRCNN for Object Detection**:
 
-   If your project requires training a MaskRCNN for object detection, check out [train-maskrcnn](./train-maskrcnn/README.md) for detailed steps.
+   If you want to train a MaskRCNN for object detection, check out [train-maskrcnn](./train-maskrcnn/README.md) for detailed steps.
 
 ## Issues
 If you encounter any issues or have questions about the project, please submit an issue on our [GitHub issues page](https://github.com/LostXine/LLaRA/issues).
