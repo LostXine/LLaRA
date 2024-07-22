@@ -54,6 +54,10 @@
 
 ## Quick Start Guide
 
+0. **Minuiment Hardware Requirement**:
+- Inference: Requires at least one GPU with a minimum of 24GB RAM.
+- Training: Requires a system with at least 300GB of system RAM and four Ampere (or newer) GPUs, each equipped with a minimum of 24GB of memory.
+
 1. **Prepare the Dataset**:
 
    Visit the [datasets directory](./datasets/README.md) to prepare your dataset for training.
