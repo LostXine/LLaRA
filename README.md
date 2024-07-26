@@ -17,18 +17,29 @@
 
 1. **Set Up Python Environment**:
 
-   Follow the instructions to install the same Python environment as used by [LLaVA](https://github.com/haotian-liu/LLaVA). Details are available [here](https://github.com/haotian-liu/LLaVA/blob/main/README.md#install).
+   Follow the instructions to install the same Python environment as used by [LLaVA](https://github.com/haotian-liu/LLaVA). 
+   ```
+   conda create -n llara python=3.10 -y
+   conda activate llara
+   conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+   ```
 
-2. **Replace LLaVA Implementation**:
+2. **Install Revised LLaVA**:
 
    Navigate to `train-llava` in this repo and install the llava package there:
    ```
-   cd train-llava && pip install -e .
+   cd train-llava && pip install -e ".[train]"
+   conda install cuda=12.1 cuda-compiler=12.1 cuda-nvcc=12.1 cuda-version=12.1 -c nvidia
+   pip install flash-attn --no-build-isolation
    ```
 
 3. **Install VIMABench**:
 
    Complete the setup for [VIMABench](https://github.com/vimalabs/VIMABench).
+   ```
+   git clone https://github.com/vimalabs/VimaBench && cd VimaBench
+   pip install -e .
+   ```
 
 ## Demo
 
