@@ -28,8 +28,8 @@
 
    Navigate to `train-llava` in this repo and install the llava package there:
    ```
-   cd train-llava && pip install -e ".[train]"
    conda install cuda=12.1 cuda-compiler=12.1 cuda-nvcc=12.1 cuda-version=12.1 -c nvidia
+   cd train-llava && pip install -e ".[train]"
    pip install flash-attn --no-build-isolation
    ```
 
