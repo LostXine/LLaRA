@@ -22,13 +22,13 @@
    conda create -n llara python=3.10 -y
    conda activate llara
    conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+   conda install cuda=12.1 cuda-compiler=12.1 cuda-nvcc=12.1 cuda-version=12.1 -c nvidia
    ```
 
 2. **Install Revised LLaVA**:
 
    Navigate to `train-llava` in this repo and install the llava package there:
    ```
-   conda install cuda=12.1 cuda-compiler=12.1 cuda-nvcc=12.1 cuda-version=12.1 -c nvidia
    cd train-llava && pip install -e ".[train]"
    pip install flash-attn --no-build-isolation
    ```
