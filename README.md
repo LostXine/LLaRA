@@ -1,6 +1,6 @@
 # LLaRA: Large Language and Robotics Assistant
 
-![llara](./assets/llara.png)
+This repository contains the official implementation of ICLR'25 paper: 
 
 **LLaRA: Supercharging Robot Learning Data for Vision-Language Policy** \[[Arxiv](https://arxiv.org/abs/2406.20095)\]
 
@@ -8,9 +8,14 @@
 
 <sup>1</sup>Stony Brook University  <sup>2</sup>University of Wisconsin-Madison 
 
+![llara](./assets/llara.png)
+
+## Demo of real-world zero-shot experiments
 <p float="left">
-  <img src="assets/llara-vid1.gif" width="49%" />
-  <img src="assets/llara-vid2.gif" width="49%" /> 
+  <img src="assets/llara-vid3.gif" width="21%" />
+  <img src="assets/llara-vid4.gif" width="21%" /> 
+  <img src="assets/llara-vid1.gif" width="26%" />
+  <img src="assets/llara-vid2.gif" width="26%" /> 
 </p>
 
 ## Installation
@@ -105,6 +110,3 @@ If you find this work useful in your research, please consider giving it a star 
 }
 ```
 Thanks!
-
-
-
