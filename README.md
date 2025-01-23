@@ -18,11 +18,11 @@ This repository contains the official implementation of ICLR'25 paper:
   <img src="assets/llara-vid2.gif" width="26%" /> 
 </p>
 
-## Installation
+## Prerequisites
 
 1. **Set Up Python Environment**:
 
-   Follow the instructions to install the same Python environment as used by [LLaVA](https://github.com/haotian-liu/LLaVA). 
+   Follow the following instructions to install the same Python environment as used by [LLaVA](https://github.com/haotian-liu/LLaVA). 
    ```
    conda create -n llara python=3.10 -y
    conda activate llara
@@ -46,7 +46,12 @@ This repository contains the official implementation of ICLR'25 paper:
    pip install -e .
    ```
 
-## Demo
+## Try a pretrained LLaRA
+
+0. **Minimum Hardware Requirement**:
+- Inference: One GPU with a minimum of 24GB RAM.
+- Full parameter finetuning: A system with at least 300GB of system RAM and 4 Ampere (or newer) GPUs, each equipped with a minimum of 24GB of memory.
+- Finetune via LoRA: One GPU with a minimum of 24GB RAM.
 
 1. **Download the Pretrained Model**:
 
@@ -68,11 +73,7 @@ This repository contains the official implementation of ICLR'25 paper:
 3. **Check the results**:
    Please refer to [llara-result.ipynb](./results/llara-result.ipynb)
 
-## Quick Start Guide
-
-0. **Minuiment Hardware Requirement**:
-- Inference: Requires at least one GPU with a minimum of 24GB RAM.
-- Training: Requires a system with at least 300GB of system RAM and four Ampere (or newer) GPUs, each equipped with a minimum of 24GB of memory.
+## Train your own LLaRA
 
 1. **Prepare the Dataset**:
 
@@ -90,7 +91,8 @@ This repository contains the official implementation of ICLR'25 paper:
 
    If you want to train a MaskRCNN for object detection, check out [train-maskrcnn](./train-maskrcnn/README.md) for detailed steps.
 
-## Issues
+## Still some things unclear?
+
 If you encounter any issues or have questions about the project, please submit an issue on our [GitHub issues page](https://github.com/LostXine/LLaRA/issues).
 
 ## License
