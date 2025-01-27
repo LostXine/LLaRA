@@ -43,6 +43,7 @@ This repository contains the official implementation of ICLR'25 paper:
    Complete the setup for [VIMABench](https://github.com/vimalabs/VIMABench).
    ```
    git clone https://github.com/vimalabs/VimaBench && cd VimaBench
+   pip install 'pip<24.1' # to install gym package required by VimaBench
    pip install -e .
    ```
 
@@ -81,7 +82,7 @@ This repository contains the official implementation of ICLR'25 paper:
 
 2. **Finetune a LLaVA Model**:
 
-   To start finetuning a LLaVA model, refer to the instructions in [train-llava](./train-llava/README.md).
+   To start finetuning an LLaVA model, refer to the instructions in [train-llava](./train-llava/README.md).
 
 3. **Evaluate the Trained Model**:
 
