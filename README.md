@@ -105,11 +105,11 @@ This project is licensed under the [Apache-2.0 License](LICENSE) - see the LICEN
 If you find this work useful in your research, please consider giving it a star ⭐ and cite our work:
 
 ```bibtex
-@article{li2024llara,
+@inproceedings{li2024llara,
   title={LLaRA: Supercharging Robot Learning Data for Vision-Language Policy},
   author={Li, Xiang and Mata, Cristina and Park, Jongwoo and Kahatapitiya, Kumara and Jang, Yoo Sung and Shang, Jinghuan and Ranasinghe, Kanchana and Burgert, Ryan and Cai, Mu and Lee, Yong Jae and Ryoo, Michael S.},
-  journal={arXiv preprint arXiv:2406.20095},
-  year={2024}
+  booktitle={International Conference on Learning Representations},
+  year={2025}
 }
 ```
 Thanks!
