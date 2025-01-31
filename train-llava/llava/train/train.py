@@ -36,9 +36,6 @@ from llava.model import *
 from llava.mm_utils import tokenizer_image_token
 
 from PIL import Image
-import zipfile
-import pickle
-
 
 local_rank = None
 
@@ -72,8 +69,6 @@ class ModelArguments:
 class DataArguments:
     data_path: str = field(default=None,
                            metadata={"help": "Path to the training data."})
-    zip_data_path: Optional[str] = field(default=None,
-                           metadata={"help": "Path to the training zip file."})
     lazy_preprocess: bool = False
     is_multimodal: bool = False
     image_folder: Optional[str] = field(default=None)
@@ -673,14 +668,6 @@ class LazySupervisedDataset(Dataset):
         super(LazySupervisedDataset, self).__init__()
         list_data_dict = json.load(open(data_path, "r"))
         
-        if data_args.zip_data_path:
-            rank0_print(f"Start to load ZIP dataset at {data_args.zip_data_path}")
-            zip_file = zipfile.ZipFile(data_args.zip_data_path, 'r')
-            # load all episode index from the zip file
-            # with zip_file.open('vima_cvt_episodes.json', 'r') as f:
-            #     self.episodes = json.load(f)
-            self.zip_file = zip_file
-
         rank0_print("Formatting inputs...Skip in lazy mode")
         self.tokenizer = tokenizer
         self.list_data_dict = list_data_dict
