@@ -2,7 +2,7 @@
 
 This repository contains the official implementation of ICLR'25 paper: 
 
-**LLaRA: Supercharging Robot Learning Data for Vision-Language Policy** \[[Arxiv, camera-ready version coming soon!](https://arxiv.org/abs/2406.20095)\]
+**LLaRA: Supercharging Robot Learning Data for Vision-Language Policy** \[[Arxiv](https://arxiv.org/abs/2406.20095)\]
 
 [Xiang Li](https://xxli.me)<sup>1</sup>, [Cristina Mata](https://openreview.net/profile?id=~Cristina_Mata1)<sup>1</sup>, [Jongwoo Park](https://github.com/jongwoopark7978)<sup>1</sup>, [Kumara Kahatapitiya](https://www3.cs.stonybrook.edu/~kkahatapitiy)<sup>1</sup>, [Yoo Sung Jang](https://yjang43.github.io/)<sup>1</sup>, [Jinghuan Shang](https://elicassion.github.io/)<sup>1</sup>, [Kanchana Ranasinghe](https://kahnchana.github.io/)<sup>1</sup>, [Ryan Burgert](https://ryanndagreat.github.io/)<sup>1</sup>, [Mu Cai](https://pages.cs.wisc.edu/~mucai/)<sup>2</sup>, [Yong Jae Lee](https://pages.cs.wisc.edu/~yongjaelee/)<sup>2</sup>, and [Michael S. Ryoo](http://michaelryoo.com/)<sup>1</sup>
 
