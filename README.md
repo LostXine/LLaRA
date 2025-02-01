@@ -35,7 +35,7 @@ This repository contains the official implementation of ICLR'25 paper:
    Navigate to `train-llava` in this repo and install the llava package there:
    ```
    cd train-llava && pip install -e ".[train]"
-   pip install flash-attn --no-build-isolation
+   pip install flash-attn==2.7.3 --no-build-isolation
    ```
 
 3. **Install VIMABench**:
