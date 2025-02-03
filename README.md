@@ -10,15 +10,15 @@ This repository contains the official implementation of ICLR'25 paper:
 
 ![llara](./assets/llara.png)
 
-## Demo of real-world zero-shot experiments
+## LLaRA solves real-world unseen tasks
 <p float="left">
-  <img src="assets/feed1.gif" width="24.7%" />
-  <img src="assets/feed2.gif" width="24.7%" /> 
-  <img src="assets/green.gif" width="24.7%" />
-  <img src="assets/sweet.gif" width="24.7%" /> 
-  <img src="assets/put_green.gif" width="33%" /> 
-  <img src="assets/put_red.gif" width="33%" /> 
-  <img src="assets/put_yellow.gif" width="33%" /> 
+  <img src="assets/feed1.gif" width="24%" />
+  <img src="assets/feed2.gif" width="24%" /> 
+  <img src="assets/green.gif" width="24%" />
+  <img src="assets/sweet.gif" width="24%" /> 
+  <img src="assets/put_green.gif" width="32%" /> 
+  <img src="assets/put_red.gif" width="32%" /> 
+  <img src="assets/put_yellow.gif" width="32%" /> 
 </p>
 
 ## Prerequisites
