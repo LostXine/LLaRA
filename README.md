@@ -12,10 +12,13 @@ This repository contains the official implementation of ICLR'25 paper:
 
 ## Demo of real-world zero-shot experiments
 <p float="left">
-  <img src="assets/llara-vid3.gif" width="21%" />
-  <img src="assets/llara-vid4.gif" width="21%" /> 
-  <img src="assets/llara-vid1.gif" width="26%" />
-  <img src="assets/llara-vid2.gif" width="26%" /> 
+  <img src="assets/feed1.gif" width="24.7%" />
+  <img src="assets/feed2.gif" width="24.7%" /> 
+  <img src="assets/green.gif" width="24.7%" />
+  <img src="assets/sweet.gif" width="24.7%" /> 
+  <img src="assets/put_green.gif" width="33%" /> 
+  <img src="assets/put_red.gif" width="33%" /> 
+  <img src="assets/put_yellow.gif" width="33%" /> 
 </p>
 
 ## Prerequisites
