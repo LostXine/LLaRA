@@ -1,4 +1,4 @@
-# LLaRA: Large Language and Robotics Assistant
+# LLaRA
 
 This repository contains the official implementation of ICLR'25 paper: 
 
