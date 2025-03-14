@@ -13,7 +13,7 @@ llava/train/train.py
 
 ## Training Instructions
 To begin training, refer to [llara_train.sh](./llara_train.sh). 
-Please modify the `dt` variable within the script to a specific dataset.
+Please modify the `dt` variable within the script to a specific dataset and make sure you are using this [liuhaotian/llava-v1.5-7b](https://huggingface.co/liuhaotian/llava-v1.5-7b) base model.
 
 This script has been validated on a single machine equipped with 300GB of system RAM and four A5000 GPUs, each with 24GB of memory. 
 Please adjust `per_device_train_batch_size` and `gradient_accumulation_steps` in the script based on your GPU configuration.

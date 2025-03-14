@@ -1,5 +1,5 @@
 dt=D-inBC-text-multi-train-0d8k-front
-base=llava-v1.5-7b
+base=liuhaotian/llava-v1.5-7b
 epoch=2
 
 deepspeed llava/train/train_mem.py \
