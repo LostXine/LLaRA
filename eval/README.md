@@ -7,11 +7,21 @@ This page will guide you to evaluate your trained LLaVA model on [VIMABench](htt
 Evaluate models trained on `inBC / D-inBC`:
 ```
 python3 eval-llara.py [evaluation name] --model-path [MODEL_PATH]
+
+# Examples:
+# python3 eval-llara.py D-inBC-AuxB-VIMA-80k --model-path ../checkpoints/llava-1.5-7b-llara-D-inBC-Aux-B-VIMA-80k --prompt-mode hso
+# python3 eval-llara.py D-inBC-AuxB-VIMA-80k --model-path ../checkpoints/llava-1.5-7b-llara-D-inBC-Aux-B-VIMA-80k --prompt-mode hsd
+# python3 eval-llara.py D-inBC-AuxB-VIMA-80k --model-path ../checkpoints/llava-1.5-7b-llara-D-inBC-Aux-B-VIMA-80k --prompt-mode hse --detector ../checkpoints/maskrcnn-train-80k-front-bs16-ep2.pth 
+   
 ```
 
 Evaluate models trained on `RT-2` style datasets:
 ```
 python3 eval-rt2.py [evaluation name] --model-path [MODEL_PATH]
+
+# Examples:
+# python3 eval-rt2.py D-RT2-Style-VIMA-80k --model-path ../checkpoints/llava-1.5-7b-llara-D-RT2-Style-VIMA-80k --prompt-mode hso
+# python3 eval-rt2.py D-RT2-Style-VIMA-80k --model-path ../checkpoints/llava-1.5-7b-llara-D-RT2-Style-VIMA-80k --prompt-mode hse --detector ../checkpoints/maskrcnn-train-80k-front-bs16-ep2.pth 
 ```
 
 ## Detailed Usage
@@ -30,7 +40,7 @@ python3 eval-llara.py [-h] [--model-path MODEL_PATH] [--output-path OUTPUT_PATH]
 - - `d`: Enable object detection using VLM.
 - - `e`: Enable object detection using MaskRCNN.
 - - `o`: Enable oracle object detection.
-- `PROMPT_ID`: Which prompt to use when genearte actions. [What's this?](https://github.com/LostXine/LLaRA/blob/abf04533e057ad51d3fd176f14507ef601237412/eval/vima_utils.py#L23-L39)
+- `PROMPT_ID`: Which prompt to use when genearte actions.
 -  - -1 (or any negative values) : Randomly selected from 15 options (default)
 -  - from 0 to 14 (inclusive) : Fixed prompt at the index you set (0-index)
 -  - 100 (or any number strictly greater than 14) : The prompt will be omitted

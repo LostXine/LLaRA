@@ -20,7 +20,7 @@ from torchvision.ops.boxes import masks_to_boxes
 
 import utils
 sys.path.append(os.path.abspath('../eval'))
-from model import TwoHeadsMaskRCNN, TwoHeadsFastRCNNPredictor
+from model_maskrcnn import TwoHeadsMaskRCNN, TwoHeadsFastRCNNPredictor
 
 def maskrcnn_resnet50_fpn(
     *,

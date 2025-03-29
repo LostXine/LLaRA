@@ -75,7 +75,7 @@ This repository contains the official implementation of ICLR'25 paper:
    ```
 
 3. **Check the results**:
-   Please refer to [llara-result.ipynb](./results/llara-result.ipynb)
+   Please refer to [llara-result.ipynb](./eval/llara-result.ipynb)
 
 ## Train your own LLaRA
 
