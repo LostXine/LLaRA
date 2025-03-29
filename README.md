@@ -93,7 +93,7 @@ This repository contains the official implementation of ICLR'25 paper:
 
 4. **Train a MaskRCNN for Object Detection**:
 
-   If you want to train a MaskRCNN for object detection, check out [train-maskrcnn](./train-maskrcnn/README.md) for detailed steps.
+   If you want to train a MaskRCNN for object detection, check out [maskrcnn](./maskrcnn/README.md) for detailed steps.
 
 ## Still some things unclear?
 
